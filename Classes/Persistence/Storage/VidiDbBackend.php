@@ -368,7 +368,7 @@ class VidiDbBackend
                 $statementParts['where'][] = '1<>1';
             } else {
                 $this->parseDynamicOperand($operand1, $operator, $source, $statementParts, $parameters, null);
-                $parameters[] = $items;
+                $parameters[] = implode(',', $items);
             }
         } elseif ($operator === QueryInterface::OPERATOR_CONTAINS) {
             if ($operand2 === null) {
